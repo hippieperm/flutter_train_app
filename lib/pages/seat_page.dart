@@ -1,8 +1,16 @@
+import 'package:a/pages/widgets/common_button.dart';
 import 'package:a/pages/widgets/seat/seat_list.dart';
 import 'package:flutter/material.dart';
 
 class SeatPage extends StatefulWidget {
-  const SeatPage({super.key});
+  final String startStation;
+  final String endStation;
+
+  const SeatPage({
+    super.key,
+    required this.startStation,
+    required this.endStation,
+  });
 
   @override
   State<SeatPage> createState() => _SeatPageState();
@@ -29,17 +37,24 @@ class _SeatPageState extends State<SeatPage> {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: Column(
-        children: [
-          buildStationHeader(),
-          SizedBox(height: 20),
-          buildSeatLegend(),
-          SeatList(
-            selectedCol: selectedCol,
-            selectedRow: selectedRow,
-            onSelected: onSelected,
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            buildStationHeader(),
+            SizedBox(height: 20),
+            buildSeatLegend(),
+            SeatList(
+              selectedCol: selectedCol,
+              selectedRow: selectedRow,
+              onSelected: onSelected,
+            ),
+            CommonButton(onPressed: () {}),
+            SizedBox(
+              height: 70,
+            )
+          ],
+        ),
       ),
     );
   }
@@ -49,7 +64,7 @@ class _SeatPageState extends State<SeatPage> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         Text(
-          '출발역',
+          widget.startStation,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.purple,
@@ -58,7 +73,7 @@ class _SeatPageState extends State<SeatPage> {
         ),
         Icon(Icons.arrow_circle_right_outlined),
         Text(
-          '도착역',
+          widget.endStation,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.purple,

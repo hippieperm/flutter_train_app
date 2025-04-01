@@ -1,6 +1,7 @@
 import 'package:a/pages/station_list_page.dart';
 import 'package:a/pages/widgets/common_button.dart';
 import 'package:a/pages/widgets/home/train_select_box.dart';
+import 'package:a/pages/seat_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -37,7 +38,15 @@ class _HomePageState extends State<HomePage> {
       return;
     }
 
-    Navigator.pushNamed(context, '/seat');
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => SeatPage(
+          startStation: startStation!,
+          endStation: endStation!,
+        ),
+      ),
+    );
   }
 
   @override
