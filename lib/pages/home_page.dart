@@ -5,7 +5,14 @@ import 'package:a/pages/seat_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final VoidCallback onThemeToggle;
+  final bool isDarkMode;
+
+  const HomePage({
+    super.key,
+    required this.onThemeToggle,
+    required this.isDarkMode,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -54,8 +61,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('기차예매'),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Theme.of(context).brightness == Brightness.dark
+                  ? Icons.light_mode
+                  : Icons.dark_mode,
+            ),
+            onPressed: widget.onThemeToggle,
+          ),
+        ],
       ),
-      backgroundColor: Colors.grey[200],
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(

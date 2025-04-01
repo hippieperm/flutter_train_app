@@ -16,10 +16,12 @@ class TrainSelectBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Container(
       height: 200,
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: isDark ? const Color(0xFF2D2D2D) : Colors.white,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -31,11 +33,11 @@ class TrainSelectBox extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   '출발역',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.grey,
+                    color: isDark ? Colors.grey[400] : Colors.grey,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -43,8 +45,7 @@ class TrainSelectBox extends StatelessWidget {
                   startStation ?? '선택',
                   style: TextStyle(
                     fontSize: 40,
-                    // color: startStation == null ? Colors.black : Colors.purple,
-                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                 ),
               ],
@@ -53,18 +54,18 @@ class TrainSelectBox extends StatelessWidget {
           Container(
             width: 2,
             height: 50,
-            color: Colors.grey[400],
+            color: isDark ? Colors.grey[700] : Colors.grey[400],
           ),
           GestureDetector(
             onTap: onEndStationTap,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
+                Text(
                   '도착역',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.grey,
+                    color: isDark ? Colors.grey[400] : Colors.grey,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -72,7 +73,7 @@ class TrainSelectBox extends StatelessWidget {
                   endStation ?? '선택',
                   style: TextStyle(
                     fontSize: 40,
-                    fontWeight: FontWeight.bold,
+                    color: isDark ? Colors.white : Colors.black,
                   ),
                 ),
               ],
