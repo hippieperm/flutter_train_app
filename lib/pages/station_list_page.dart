@@ -1,3 +1,4 @@
+import 'package:a/data/data.dart';
 import 'package:flutter/material.dart';
 
 class StationListPage extends StatelessWidget {
@@ -11,6 +12,16 @@ class StationListPage extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios_new),
           onPressed: () => Navigator.pop(context),
+        ),
+      ),
+      body: ListView.builder(
+        itemCount: trainStations.length,
+        itemBuilder: (context, index) => Text(
+          '${trainStations[index]}',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
