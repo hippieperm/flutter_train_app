@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 
 class StationListPage extends StatelessWidget {
   final String title;
+  final String? excludeStation; // 제외할 역
 
   const StationListPage({
     super.key,
     required this.title,
+    this.excludeStation,
   });
 
   @override
@@ -22,7 +24,9 @@ class StationListPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: TrainList(),
+        child: TrainList(
+          excludeStation: excludeStation,
+        ),
       ),
     );
   }

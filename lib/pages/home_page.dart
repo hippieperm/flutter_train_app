@@ -68,7 +68,10 @@ class _HomePageState extends State<HomePage> {
                 final selected = await Navigator.push<String>(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const StationListPage(title: '출발역'),
+                    builder: (context) => StationListPage(
+                      title: '출발역',
+                      excludeStation: endStation,
+                    ),
                   ),
                 );
                 if (selected != null) {
@@ -79,7 +82,10 @@ class _HomePageState extends State<HomePage> {
                 final selected = await Navigator.push<String>(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const StationListPage(title: '도착역'),
+                    builder: (context) => StationListPage(
+                      title: '도착역',
+                      excludeStation: startStation,
+                    ),
                   ),
                 );
                 if (selected != null) {
