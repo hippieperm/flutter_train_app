@@ -16,13 +16,24 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
+            SelectBox(),
+            SizedBox(height: 20),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(
+                  '좌석선택',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                  shape: BorderRadius.circular(11),
+                ),
               ),
-              child: SelectBox(),
             )
           ],
         ),
@@ -30,6 +41,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
-
