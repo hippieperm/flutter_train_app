@@ -21,6 +21,26 @@ class HomePage extends StatelessWidget {
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
               ),
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        '출발역',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Container(),
+                  Column(
+                    children: [],
+                  ),
+                ],
+              ),
             )
           ],
         ),
