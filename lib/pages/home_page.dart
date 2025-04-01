@@ -1,5 +1,5 @@
 import 'package:a/pages/widgets/common_button.dart';
-import 'package:a/pages/widgets/train_select_box.dart';
+import 'package:a/pages/widgets/home/train_select_box.dart';
 
 import 'package:flutter/material.dart';
 
