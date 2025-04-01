@@ -1,4 +1,5 @@
 import 'package:a/pages/home_page.dart';
+import 'package:a/pages/seat_page.dart';
 import 'package:a/pages/station_list_page.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       // home: HomePage(),
-      home: StationListPage(),
+      // home: StationListPage(),
+      home: SeatPage(),
     );
   }
 }
