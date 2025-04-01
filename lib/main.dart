@@ -14,9 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      // home: HomePage(),
+      home: HomePage(),
       // home: StationListPage(),
-      home: SeatPage(),
+      // home: SeatPage(),
     );
   }
 }

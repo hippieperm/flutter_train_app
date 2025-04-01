@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CommonButton extends StatelessWidget {
+  final VoidCallback onPressed;
+
   const CommonButton({
     super.key,
+    required this.onPressed,
   });
 
   @override
@@ -10,7 +13,7 @@ class CommonButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
