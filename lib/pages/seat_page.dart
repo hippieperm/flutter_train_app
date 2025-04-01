@@ -47,9 +47,11 @@ class _SeatPageState extends State<SeatPage> {
           ),
           CupertinoDialogAction(
             child: Text('확인'),
-            onPressed: () {
+            onPressed: () async {
               Navigator.pop(context); // 다이얼로그 닫기
+              await Future.delayed(Duration(milliseconds: 200));
               Navigator.pop(context); // SeatPage 닫기
+              await Future.delayed(Duration(milliseconds: 200));
               Navigator.pop(context); // HomePage로 이동
             },
           ),
