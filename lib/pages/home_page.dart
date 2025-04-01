@@ -5,6 +5,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('HomePage');
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('기차예매'),
+      ),
+      
+    );
   }
 }
