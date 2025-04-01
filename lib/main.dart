@@ -1,6 +1,5 @@
 import 'package:a/pages/home_page.dart';
-import 'package:a/pages/seat_page.dart';
-import 'package:a/pages/station_list_page.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -65,12 +64,10 @@ class _MyAppState extends State<MyApp> {
           bodyMedium: TextStyle(color: Colors.white),
           titleMedium: TextStyle(color: Colors.white),
         ),
-        colorScheme: ColorScheme.dark(
+        colorScheme: const ColorScheme.dark(
           primary: Colors.purple,
           secondary: Colors.purpleAccent,
-          surface: const Color(0xFF2D2D2D),
-          background: const Color(0xFF1E1E1E),
-          onBackground: Colors.white,
+          surface: Color(0xFF2D2D2D),
           onSurface: Colors.white,
         ),
       ),

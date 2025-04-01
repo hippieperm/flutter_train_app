@@ -44,7 +44,7 @@ class SeatList extends StatelessWidget {
                                   alignment: Alignment.center,
                                   child: Text(
                                     getColumnLabel(col),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -57,23 +57,23 @@ class SeatList extends StatelessWidget {
                                   ),
                               ],
                             ),
-                            if (col < 2) SizedBox(width: 4),
+                            if (col < 2) const SizedBox(width: 4),
                           ],
 
                           // 가운데 번호
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           Column(
                             children: [
-                              SizedBox(height: 30),
+                              const SizedBox(height: 30),
                               for (int i = 1; i <= 20; i++)
                                 Container(
                                   height: 50,
                                   width: 30,
                                   alignment: Alignment.center,
-                                  margin: EdgeInsets.only(bottom: 8),
+                                  margin: const EdgeInsets.only(bottom: 8),
                                   child: Text(
                                     '$i',
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -81,7 +81,7 @@ class SeatList extends StatelessWidget {
                                 ),
                             ],
                           ),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
 
                           // 오른쪽 좌석 (C, D)
                           for (int col = 3; col <= 4; col++) ...[
@@ -93,7 +93,7 @@ class SeatList extends StatelessWidget {
                                   alignment: Alignment.center,
                                   child: Text(
                                     getColumnLabel(col),
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -101,12 +101,12 @@ class SeatList extends StatelessWidget {
                                 ),
                                 for (int row = 1; row <= 20; row++)
                                   Padding(
-                                    padding: const EdgeInsets.only(bottom: 8),
+                                    padding: EdgeInsets.only(bottom: 8),
                                     child: seat(row, col),
                                   ),
                               ],
                             ),
-                            if (col < 4) SizedBox(width: 4),
+                            if (col < 4) const SizedBox(width: 4),
                           ],
                         ],
                       ),

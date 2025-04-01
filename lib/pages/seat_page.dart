@@ -34,13 +34,13 @@ class _SeatPageState extends State<SeatPage> {
     showCupertinoDialog(
       context: context,
       builder: (context) => CupertinoAlertDialog(
-        title: Text('예매 확인'),
+        title: const Text('예매 확인'),
         content: Text(
           '${widget.startStation}에서 ${widget.endStation}까지\n${selectedRow}열 ${String.fromCharCode(64 + selectedCol!)}석을 예매하시겠습니까?',
         ),
         actions: [
           CupertinoDialogAction(
-            child: Text(
+            child: const Text(
               '취소',
               style: TextStyle(color: Colors.red),
             ),
@@ -49,16 +49,12 @@ class _SeatPageState extends State<SeatPage> {
             },
           ),
           CupertinoDialogAction(
-            child: Text(
+            child: const Text(
               '확인',
               style: TextStyle(color: Colors.blue),
             ),
             onPressed: () async {
-              Navigator.pop(context); // 다이얼로그 닫기
-              await Future.delayed(Duration(milliseconds: 200));
-              Navigator.pop(context); // SeatPage 닫기
-              await Future.delayed(Duration(milliseconds: 200));
-              Navigator.pop(context); // HomePage로 이동
+              Navigator.of(context).popUntil((route) => route.isFirst);
             },
           ),
         ],
@@ -80,8 +76,9 @@ class _SeatPageState extends State<SeatPage> {
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
+            const SizedBox(height: 20),
             buildStationHeader(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             buildSeatLegend(),
             SeatList(
               selectedCol: selectedCol,
@@ -91,7 +88,7 @@ class _SeatPageState extends State<SeatPage> {
             CommonButton(
               onPressed: _showBookingConfirmDialog,
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
           ],
         ),
       ),
@@ -104,16 +101,16 @@ class _SeatPageState extends State<SeatPage> {
       children: [
         Text(
           widget.startStation,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.purple,
             fontSize: 30,
           ),
         ),
-        Icon(Icons.arrow_circle_right_outlined),
+        const Icon(Icons.arrow_circle_right_outlined),
         Text(
           widget.endStation,
-          style: TextStyle(
+          style: const TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.purple,
             fontSize: 30,
@@ -136,9 +133,9 @@ Row buildSeatLegend() {
           borderRadius: BorderRadius.circular(8),
         ),
       ),
-      SizedBox(width: 4),
-      Text('선택됨'),
-      SizedBox(width: 20),
+      const SizedBox(width: 4),
+      const Text('선택됨'),
+      const SizedBox(width: 20),
       Container(
         width: 24,
         height: 24,
@@ -147,8 +144,8 @@ Row buildSeatLegend() {
           borderRadius: BorderRadius.circular(8),
         ),
       ),
-      SizedBox(width: 4),
-      Text('선택됨'),
+      const SizedBox(width: 4),
+      const Text('선택됨'),
     ],
   );
 }
