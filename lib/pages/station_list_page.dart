@@ -14,13 +14,27 @@ class StationListPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: ListView.builder(
-        itemCount: trainStations.length,
-        itemBuilder: (context, index) => Text(
-          '${trainStations[index]}',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: ListView.builder(
+          itemCount: trainStations.length,
+          itemBuilder: (context, index) => Container(
+            height: 50,
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.grey[300]!,
+                  width: 1,
+                ),
+              ),
+            ),
+            child: Text(
+              '${trainStations[index]}',
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ),
       ),
