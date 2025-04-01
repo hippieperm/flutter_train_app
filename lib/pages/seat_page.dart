@@ -1,7 +1,23 @@
+import 'package:a/pages/widgets/seat/seat_list.dart';
 import 'package:flutter/material.dart';
 
-class SeatPage extends StatelessWidget {
+class SeatPage extends StatefulWidget {
   const SeatPage({super.key});
+
+  @override
+  State<SeatPage> createState() => _SeatPageState();
+}
+
+class _SeatPageState extends State<SeatPage> {
+  int? selectedRow;
+  int? selectedCol;
+
+  void onSelected(int row, int col) {
+    setState(() {
+      selectedRow = row;
+      selectedCol = col;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +34,11 @@ class SeatPage extends StatelessWidget {
           buildStationHeader(),
           SizedBox(height: 20),
           buildSeatLegend(),
+          SeatList(
+            selectedCol: selectedCol,
+            selectedRow: selectedRow,
+            onSelected: onSelected,
+          ),
         ],
       ),
     );
