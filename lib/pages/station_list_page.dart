@@ -1,4 +1,5 @@
 import 'package:a/data/data.dart';
+import 'package:a/pages/widgets/train_list.dart';
 import 'package:flutter/material.dart';
 
 class StationListPage extends StatelessWidget {
@@ -16,33 +17,7 @@ class StationListPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: ListView.builder(
-          itemCount: trainStations.length,
-          itemBuilder: (context, index) => Container(
-            height: 50,
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.grey[300]!,
-                  width: 1,
-                ),
-              ),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '${trainStations[index]}',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+        child: TrainList(),
       ),
     );
   }
