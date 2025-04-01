@@ -1,5 +1,6 @@
 import 'package:a/pages/widgets/common_button.dart';
 import 'package:a/pages/widgets/seat/seat_list.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SeatPage extends StatefulWidget {
@@ -27,6 +28,36 @@ class _SeatPageState extends State<SeatPage> {
     });
   }
 
+  void _showBookingConfirmDialog() {
+    if (selectedRow == null || selectedCol == null) return;
+
+    showCupertinoDialog(
+      context: context,
+      builder: (context) => CupertinoAlertDialog(
+        title: Text('예매 확인'),
+        content: Text(
+          '${widget.startStation}에서 ${widget.endStation}까지\n${selectedRow}열 ${String.fromCharCode(64 + selectedCol!)}석을 예매하시겠습니까?',
+        ),
+        actions: [
+          CupertinoDialogAction(
+            child: Text('취소'),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          CupertinoDialogAction(
+            child: Text('확인'),
+            onPressed: () {
+              Navigator.pop(context); // 다이얼로그 닫기
+              Navigator.pop(context); // SeatPage 닫기
+              Navigator.pop(context); // HomePage로 이동
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,10 +80,10 @@ class _SeatPageState extends State<SeatPage> {
               selectedRow: selectedRow,
               onSelected: onSelected,
             ),
-            CommonButton(onPressed: () {}),
-            SizedBox(
-              height: 40,
-            )
+            CommonButton(
+              onPressed: _showBookingConfirmDialog,
+            ),
+            SizedBox(height: 40),
           ],
         ),
       ),
