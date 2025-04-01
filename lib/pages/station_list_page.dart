@@ -5,6 +5,6 @@ class StationListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('StationListPage');
+    return const Text('StationListPage');
   }
 }
