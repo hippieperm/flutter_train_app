@@ -70,7 +70,7 @@ class SeatList extends StatelessWidget {
                                   height: 50,
                                   width: 30,
                                   alignment: Alignment.center,
-                                  margin: EdgeInsets.only(bottom: 4),
+                                  margin: EdgeInsets.only(bottom: 8),
                                   child: Text(
                                     '$i',
                                     style: TextStyle(
