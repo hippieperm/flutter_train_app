@@ -22,8 +22,11 @@ class HomePage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
                         '출발역',
@@ -47,6 +50,7 @@ class HomePage extends StatelessWidget {
                     color: Colors.grey[400],
                   ),
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
                         '출발역',
