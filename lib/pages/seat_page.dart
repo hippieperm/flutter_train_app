@@ -51,7 +51,7 @@ class _SeatPageState extends State<SeatPage> {
             ),
             CommonButton(onPressed: () {}),
             SizedBox(
-              height: 70,
+              height: 40,
             )
           ],
         ),

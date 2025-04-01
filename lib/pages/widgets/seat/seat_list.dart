@@ -24,7 +24,7 @@ class SeatList extends StatelessWidget {
           // SizedBox(height: 20),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: ListView(
                 children: [
                   Center(
