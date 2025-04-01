@@ -1,5 +1,6 @@
 import 'package:a/pages/widgets/common_button.dart';
-import 'package:a/pages/widgets/select_box.dart';
+import 'package:a/pages/widgets/train_select_box.dart';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SelectBox(),
+            TrainSelectBox(),
             SizedBox(height: 20),
             CommonButton(),
           ],
