@@ -40,13 +40,19 @@ class _SeatPageState extends State<SeatPage> {
         ),
         actions: [
           CupertinoDialogAction(
-            child: Text('취소'),
+            child: Text(
+              '취소',
+              style: TextStyle(color: Colors.red),
+            ),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
           CupertinoDialogAction(
-            child: Text('확인'),
+            child: Text(
+              '확인',
+              style: TextStyle(color: Colors.blue),
+            ),
             onPressed: () async {
               Navigator.pop(context); // 다이얼로그 닫기
               await Future.delayed(Duration(milliseconds: 200));
