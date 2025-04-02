@@ -97,23 +97,30 @@ class _SeatPageState extends State<SeatPage> {
 
   Row buildStationHeader() {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Text(
-          widget.startStation,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.purple,
-            fontSize: 30,
+        Expanded(
+          child: Center(
+            child: Text(
+              widget.startStation,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.purple,
+                fontSize: 30,
+              ),
+            ),
           ),
         ),
         const Icon(Icons.arrow_circle_right_outlined),
-        Text(
-          widget.endStation,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Colors.purple,
-            fontSize: 30,
+        Expanded(
+          child: Center(
+            child: Text(
+              widget.endStation,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.purple,
+                fontSize: 30,
+              ),
+            ),
           ),
         ),
       ],
