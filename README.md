@@ -63,6 +63,11 @@ lib/
   <img src="https://github.com/user-attachments/assets/b273a43e-f328-4056-b2d1-8d165beba0b7" width="300" style="margin: 5px;">
 </div>
 
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-04-02 at 14 56 05](https://github.com/user-attachments/assets/695236cf-b72e-4ab5-a593-c5ad6fee5ab6)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-04-02 at 14 56 07](https://github.com/user-attachments/assets/031433db-1b66-4ff9-8438-f12a03877f3c)
+![Simulator Screenshot - iPhone 16 Pro Max - 2025-04-02 at 14 56 12](https://github.com/user-attachments/assets/ea6ba95c-b131-436b-ab67-3c674339dd2c)
+
+
 ## 🔍 주요 기능 설명
 
 ### 🏠 홈 화면
