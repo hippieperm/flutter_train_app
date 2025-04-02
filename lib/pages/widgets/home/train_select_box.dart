@@ -27,28 +27,32 @@ class TrainSelectBox extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          GestureDetector(
-            onTap: onStartStationTap,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  '출발역',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: isDark ? Colors.grey[400] : Colors.grey,
-                    fontWeight: FontWeight.bold,
-                  ),
+          Expanded(
+            child: Center(
+              child: GestureDetector(
+                onTap: onStartStationTap,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      '출발역',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: isDark ? Colors.grey[400] : Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      startStation ?? '선택',
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: isDark ? Colors.white : Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  startStation ?? '선택',
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: isDark ? Colors.white : Colors.black,
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
           Container(
@@ -56,27 +60,31 @@ class TrainSelectBox extends StatelessWidget {
             height: 50,
             color: isDark ? Colors.grey[700] : Colors.grey[400],
           ),
-          GestureDetector(
-            onTap: onEndStationTap,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '도착역',
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: isDark ? Colors.grey[400] : Colors.grey,
-                    fontWeight: FontWeight.bold,
-                  ),
+          Expanded(
+            child: Center(
+              child: GestureDetector(
+                onTap: onEndStationTap,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      '도착역',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: isDark ? Colors.grey[400] : Colors.grey,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      endStation ?? '선택',
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: isDark ? Colors.white : Colors.black,
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  endStation ?? '선택',
-                  style: TextStyle(
-                    fontSize: 40,
-                    color: isDark ? Colors.white : Colors.black,
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ],
